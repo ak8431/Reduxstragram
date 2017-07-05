@@ -1,4 +1,4 @@
-function comments(state = [], action){
+function postcomments(state = [], action){
     switch (action.type) {
     	case 'ADD_COMMENT':
     		break;
@@ -7,6 +7,16 @@ function comments(state = [], action){
     	default:
     		return state;
     }
+}
+
+function comments(state=[], action){
+	if(typeof action.postId !== 'undefined'){
+		return {
+			...state,
+			[action.postId]:postcomments(state[action.postId],action)
+		}
+	}
+	return state;
 }
 
 export default comments;
