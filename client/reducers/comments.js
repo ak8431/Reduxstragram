@@ -1,4 +1,12 @@
-export default function comments(state = [], action){
-    console.log(state, action);
-    return state;
+function comments(state = [], action){
+    switch (action.type) {
+    	case 'ADD_COMMENT':
+    		break;
+    	case 'REMOVE_COMMENT' : 
+    		break;
+    	default:
+    		return state;
+    }
 }
+
+export default comments;
