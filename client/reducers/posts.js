@@ -4,8 +4,9 @@
 
 function posts(state = [], action){
     switch (action.type) {
-    	case 'INCREMENT_LIKES':
+        case 'INCREMENT_LIKES':
     		const i = action.index;
+    		console.log('Incrementing Likes')
     		return [
     			...state.slice(0,i),
     			{...state[i], likes : state[i].likes+1},
